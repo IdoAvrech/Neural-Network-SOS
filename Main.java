@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class Main {
-	
+
 	public static Scanner kb = new Scanner(System.in);
-	
+
 	public static void main(String[] args) {
 		final int datalength = 1360;
 		final int neurons = constants.inputneurons;
@@ -13,7 +13,7 @@ public class Main {
 		for(int i = 0; i<data.length; i++) {
 			data[i] = new Point(datadouble[i], i);
 		}
-		
+
 		Point[][] TrainData = new Point[datalength-neurons+1][neurons];
 		for(int i = 0; i<TrainData.length; i++) {
 			for(int j = 0; j<neurons; j++) {
@@ -27,8 +27,8 @@ public class Main {
 			}
 			System.out.println();
 		}*/
-		
-		
+
+
 		double[][] Weights = new double[middle][neurons+1];
 		for(int i = 0; i<Weights.length; i++) {
 			for(int j = 0; j<Weights[i].length; j++) {
@@ -46,9 +46,9 @@ public class Main {
 			TestData[i] = new Point(value, i);
 			System.out.println(TestData[i]);
 		}*/
-		
-		
-		
+
+
+
 		Neural MyNetwork = new Neural(TrainData[0], Weights, WeightsEnd);
 		//System.out.println(MyNetwork.Middle.Neurons[1].sigmoid(10000));
 		MyNetwork.FixEverything(TrainData);
@@ -68,11 +68,11 @@ public class Main {
 			System.out.println("do you want to continue");
 			ans = kb.next().charAt(0);
 		}while(ans == 'y');
-		
-		
-		
-		
-		
+
+
+
+
+
 	}
-	
+
 }
